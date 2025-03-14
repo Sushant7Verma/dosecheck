@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminder</title>
+    <link rel="stylesheet" href="mediweb.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medicine Reminder</h1>
+        <button id="addMedicineBtn">Add Medicine</button>
+        <table id="medicineTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time (24-hour format)</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="medicineList">
+                <!-- Medicine rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal for adding/editing medicines -->
+    <div id="medicineModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add Medicine</h2>
+            <form id="medicineForm">
+                <label for="medicineName">Medicine Name:</label>
+                <input type="text" id="medicineName" required>
+
+                <label for="medicineTimeHour">Time (Hour):</label>
+                <input type="number" id="medicineTimeHour" min="0" max="23" required>
+
+                <label for="medicineTimeMinute">Time (Minute):</label>
+                <input type="number" id="medicineTimeMinute" min="0" max="59" required>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="mediweb.js"></script>
+</body>
+</html>
